@@ -15,6 +15,6 @@ module.exports = defineConfig({
   },
   // INJECT THIS BLOCK TO STOP THE FILE CHECK FOR GOOD:
   admin: {
-    disable: true
+    disable: false
   }
 })
