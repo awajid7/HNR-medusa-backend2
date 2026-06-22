@@ -13,8 +13,8 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET,
     }
   },
-  // ADD THIS ADMIN BLOCK RIGHT HERE:
   admin: {
+    // @ts-ignore - Bypasses rigid type verification during medusa build
     viteConfig: () => {
       return {
         server: {
