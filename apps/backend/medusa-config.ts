@@ -12,5 +12,15 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET,
       cookieSecret: process.env.COOKIE_SECRET,
     }
+  },
+  // ADD THIS ADMIN BLOCK RIGHT HERE:
+  admin: {
+    viteConfig: () => {
+      return {
+        server: {
+          allowedHosts: true
+        }
+      }
+    }
   }
 })
