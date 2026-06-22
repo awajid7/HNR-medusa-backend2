@@ -13,14 +13,12 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET,
     }
   },
+  // UPDATE THIS EXACT BLOCK BELOW:
   admin: {
-    // @ts-ignore - Bypasses rigid type verification during medusa build
-    viteConfig: () => {
-      return {
-        server: {
-          allowedHosts: true
-        }
-      }
+    vite: (config: any) => {
+      config.server = config.server || {}
+      config.server.allowedHosts = ['hnr-medusa-backend-production.up.railway.app']
+      return config
     }
   }
 })
