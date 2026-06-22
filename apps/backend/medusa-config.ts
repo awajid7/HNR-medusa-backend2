@@ -12,15 +12,5 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET,
       cookieSecret: process.env.COOKIE_SECRET,
     }
-  },
-  admin: {
-    path: '/app', // Explicitly bounds administrative routing to the /app prefix
-    // @ts-ignore
-    vite: (config: any) => {
-      config.base = '/app/' // Forces asset files to build with proper web location scopes
-      config.server = config.server || {}
-      config.server.allowedHosts = ['hnr-medusa-backend-production.up.railway.app']
-      return config
-    }
   }
 })
